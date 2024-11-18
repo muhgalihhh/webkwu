@@ -23,12 +23,12 @@ export default function AboutUsPage() {
           {/* Deskripsi */}
           <div className="space-y-4 text-sm leading-relaxed text-gray-700 sm:text-base md:leading-loose">
             <p>
-              MazeArtDesign adalah studio desain kreatif yang didirikan untuk menciptakan solusi desain yang inovatif dan bermakna. Dengan pengalaman bertahun-tahun di berbagai industri, kami
-              berkomitmen untuk memberikan desain yang tidak hanya estetis tetapi juga fungsional dan berdampak positif.
+              MazeArtDesign adalah usaha freelance desain grafis yang berlokasi di Kost Blater 34, Blater, Kalimanah, Purbalingga, Jawa Tengah. Layanan yang ditawarkan mencakup desain baju, feed
+              Instagram, poster, dan media grafis lainnya. Dengan fokus pada kebutuhan spesifik klien, MazeArtDesign membantu individu dan bisnis menciptakan identitas visual yang menarik dan efektif.
             </p>
             <p>
-              Dari branding hingga desain antarmuka pengguna (UI/UX), kami berkolaborasi dengan klien untuk menerjemahkan visi mereka menjadi karya nyata. Kami percaya bahwa setiap proyek adalah
-              kesempatan untuk menceritakan kisah unik dan menciptakan hubungan emosional dengan audiens.
+              Permintaan jasa desain grafis terus meningkat seiring pertumbuhan media sosial dan e-commerce, menjadikan MazeArtDesign solusi fleksibel bagi usaha yang membutuhkan desain berkualitas
+              tanpa biaya tinggi. Usaha ini berkomitmen memberikan layanan kreatif dan inovatif untuk mendukung kampanye pemasaran maupun kebutuhan personal klien.
             </p>
             <p>Kami mengundang Anda untuk bergabung dengan perjalanan kami dalam merancang masa depan yang lebih inspiratif dan kreatif.</p>
           </div>
