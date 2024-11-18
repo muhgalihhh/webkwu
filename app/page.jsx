@@ -10,27 +10,30 @@ export default function HomePage() {
   const featuredWorks = [
     {
       id: 1,
-      title: 'Branding Identitas Perusahaan',
-      description: 'Desain logo dan identitas visual modern untuk berbagai jenis usaha.',
+      title: 'Lorem Ipsum 1',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       imageUrl: '/images/1.png',
-      category: 'Branding',
-      details: 'Kami telah membantu banyak perusahaan membangun identitas merek yang kuat dan menarik. Dari logo hingga panduan merek, kami memastikan hasil yang sesuai visi Anda.',
+      category: 'Lorem Ipsum',
+      details:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl id consequat consectetur, nunc nunc ultricies nunc, id lacinia risus nisl sed nunc. Sed auctor, mauris id luctus tincidunt, nunc nunc ultricies nunc, id lacinia risus nisl sed nunc.',
     },
     {
       id: 2,
-      title: 'Desain Produk Digital',
-      description: 'Antarmuka pengguna inovatif untuk aplikasi mobile dan web.',
+      title: 'Lorem Ipsum 2',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       imageUrl: '/images/2.png',
-      category: 'UI/UX',
-      details: 'Tim kami memadukan estetika dan fungsionalitas untuk menciptakan antarmuka yang memukau dan mudah digunakan. Setiap desain dibuat untuk meningkatkan pengalaman pengguna.',
+      category: 'Lorem Ipsum',
+      details:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl id consequat consectetur, nunc nunc ultricies nunc, id lacinia risus nisl sed nunc. Sed auctor, mauris id luctus tincidunt, nunc nunc ultricies nunc, id lacinia risus nisl sed nunc.',
     },
     {
       id: 3,
-      title: 'Kampanye Pemasaran',
-      description: 'Konsep kreatif untuk media sosial dan kampanye digital.',
+      title: 'Lorem Ipsum 3',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       imageUrl: '/images/3.png',
-      category: 'Marketing',
-      details: 'Kami membuat kampanye pemasaran yang efektif, menarik perhatian audiens, dan meningkatkan kesadaran merek Anda di berbagai platform digital.',
+      category: 'Lorem Ipsum',
+      details:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl id consequat consectetur, nunc nunc ultricies nunc, id lacinia risus nisl sed nunc. Sed auctor, mauris id luctus tincidunt, nunc nunc ultricies nunc, id lacinia risus nisl sed nunc.',
     },
   ];
   const openModal = (work) => {

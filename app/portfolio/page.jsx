@@ -3,16 +3,16 @@ import { useState } from 'react';
 
 export default function PortfolioPage() {
   const projects = [
-    { title: 'Project 1', description: 'Desain kreatif untuk branding perusahaan.', image: '/images/1.png' },
-    { title: 'Project 2', description: 'Ilustrasi untuk kampanye pemasaran.', image: '/images/2.png' },
-    { title: 'Project 3', description: 'Desain UI/UX untuk aplikasi mobile.', image: '/images/3.png' },
-    { title: 'Project 4', description: 'Pengembangan website untuk e-commerce.', image: '/images/4.png' },
-    { title: 'Project 5', description: 'Desain logo untuk startup teknologi.', image: '/images/5.png' },
-    { title: 'Project 6', description: 'Animasi untuk presentasi bisnis.', image: '/images/6.png' },
-    { title: 'Project 7', description: 'Desain sistem interaktif untuk edukasi.', image: '/images/7.png' },
-    { title: 'Project 8', description: 'Pengembangan platform SaaS untuk startup.', image: '/images/8.png' },
-    { title: 'Project 9', description: 'Desain marketing untuk media sosial.', image: '/images/9.png' },
-    { title: 'Project 10', description: 'Desain branding untuk event besar.', image: '/images/10.png' },
+    { title: 'Lorem Ipsum 1', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: '/images/1.png' },
+    { title: 'Lorem Ipsum 2', description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.', image: '/images/2.png' },
+    { title: 'Lorem Ipsum 3', description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', image: '/images/3.png' },
+    { title: 'Lorem Ipsum 4', description: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.', image: '/images/4.png' },
+    { title: 'Lorem Ipsum 5', description: 'Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.', image: '/images/5.png' },
+    { title: 'Lorem Ipsum 6', description: 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.', image: '/images/6.png' },
+    { title: 'Lorem Ipsum 7', description: 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.', image: '/images/7.png' },
+    { title: 'Lorem Ipsum 8', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', image: '/images/8.png' },
+    { title: 'Lorem Ipsum 9', description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', image: '/images/9.png' },
+    { title: 'Lorem Ipsum 10', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', image: '/images/10.png' },
   ];
 
   const [searchQuery, setSearchQuery] = useState('');
