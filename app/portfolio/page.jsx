@@ -3,16 +3,16 @@ import { useState } from 'react';
 
 export default function PortfolioPage() {
   const projects = [
-    { title: 'Project 1', description: 'Desain kreatif untuk branding perusahaan.', image: '/images/project1.jpg' },
-    { title: 'Project 2', description: 'Ilustrasi untuk kampanye pemasaran.', image: '/images/project2.jpg' },
-    { title: 'Project 3', description: 'Desain UI/UX untuk aplikasi mobile.', image: '/images/project3.jpg' },
-    { title: 'Project 4', description: 'Pengembangan website untuk e-commerce.', image: '/images/project4.jpg' },
-    { title: 'Project 5', description: 'Desain logo untuk startup teknologi.', image: '/images/project5.jpg' },
-    { title: 'Project 6', description: 'Animasi untuk presentasi bisnis.', image: '/images/project6.jpg' },
-    { title: 'Project 7', description: 'Desain sistem interaktif untuk edukasi.', image: '/images/project7.jpg' },
-    { title: 'Project 8', description: 'Pengembangan platform SaaS untuk startup.', image: '/images/project8.jpg' },
-    { title: 'Project 9', description: 'Desain marketing untuk media sosial.', image: '/images/project9.jpg' },
-    { title: 'Project 10', description: 'Desain branding untuk event besar.', image: '/images/project10.jpg' },
+    { title: 'Project 1', description: 'Desain kreatif untuk branding perusahaan.', image: '/images/1.png' },
+    { title: 'Project 2', description: 'Ilustrasi untuk kampanye pemasaran.', image: '/images/2.png' },
+    { title: 'Project 3', description: 'Desain UI/UX untuk aplikasi mobile.', image: '/images/3.png' },
+    { title: 'Project 4', description: 'Pengembangan website untuk e-commerce.', image: '/images/4.png' },
+    { title: 'Project 5', description: 'Desain logo untuk startup teknologi.', image: '/images/5.png' },
+    { title: 'Project 6', description: 'Animasi untuk presentasi bisnis.', image: '/images/6.png' },
+    { title: 'Project 7', description: 'Desain sistem interaktif untuk edukasi.', image: '/images/7.png' },
+    { title: 'Project 8', description: 'Pengembangan platform SaaS untuk startup.', image: '/images/8.png' },
+    { title: 'Project 9', description: 'Desain marketing untuk media sosial.', image: '/images/9.png' },
+    { title: 'Project 10', description: 'Desain branding untuk event besar.', image: '/images/10.png' },
   ];
 
   const [searchQuery, setSearchQuery] = useState('');
