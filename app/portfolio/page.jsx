@@ -19,69 +19,66 @@ export default function PortfolioPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 3;
 
-  // Filter berdasarkan pencarian
   const filteredProjects = projects.filter((project) => project.title.toLowerCase().includes(searchQuery.toLowerCase()));
 
-  // Menghitung total halaman
   const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
-
-  // Mendapatkan proyek yang ditampilkan pada halaman saat ini
   const indexOfLastProject = currentPage * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
   const currentProjects = filteredProjects.slice(indexOfFirstProject, indexOfLastProject);
 
-  // Fungsi untuk mengganti halaman
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
   return (
-    <div>
-      <h1 className="mb-4 text-4xl font-bold text-gray-800">Portofolio Kami</h1>
+    <div className="container px-4 py-8 mx-auto sm:px-6 lg:px-8">
+      <h1 className="mb-6 text-3xl font-bold text-center text-gray-800 sm:text-4xl lg:text-5xl">Portofolio Kami</h1>
 
       {/* Search Bar */}
-      <div className="mb-6">
+      <div className="mb-8">
         <input
           type="text"
           placeholder="Cari proyek..."
-          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-3 text-gray-800 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
       </div>
 
-      {/* Daftar Proyek */}
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {/* Project Grid */}
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {currentProjects.map((project, index) => (
-          <div key={index} className="p-4 transition-shadow duration-300 bg-white rounded-lg shadow-md hover:shadow-xl">
-            <img src={project.image} alt={project.title} className="object-cover w-full h-64 rounded-lg" />
-            <h2 className="mt-4 text-2xl font-semibold text-gray-800">{project.title}</h2>
-            <p className="mt-2 text-gray-600">{project.description}</p>
+          <div key={index} className="p-4 transition-shadow duration-300 bg-white rounded-lg shadow-md hover:shadow-lg">
+            <div className="overflow-hidden rounded-lg aspect-video">
+              <img src={project.image} alt={project.title} className="object-cover w-full h-full" />
+            </div>
+            <h2 className="mt-4 text-xl font-semibold text-gray-800 sm:text-2xl">{project.title}</h2>
+            <p className="mt-2 text-sm text-gray-600 sm:text-base">{project.description}</p>
           </div>
         ))}
       </div>
 
-      {/* Paging Controls */}
-      <div className="flex justify-center mt-6 space-x-4">
+      {/* Pagination */}
+      <div className="flex justify-center mt-8 space-x-4">
         {/* Previous Button */}
         <button
-          className={`px-4 py-2 rounded-md ${currentPage === 1 ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-500 text-white'}`}
+          className={`px-4 py-2 rounded-md ${currentPage === 1 ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-500 text-white hover:bg-blue-600'}`}
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
         >
           Prev
         </button>
 
-        {/* Page Number Buttons */}
+        {/* Page Numbers */}
         {[...Array(totalPages)].map((_, index) => (
-          <button key={index} className={`px-4 py-2 rounded-md ${currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-gray-200'}`} onClick={() => handlePageChange(index + 1)}>
+          <button key={index} className={`px-4 py-2 rounded-md ${currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-gray-200 hover:bg-gray-300'}`} onClick={() => handlePageChange(index + 1)}>
             {index + 1}
           </button>
         ))}
 
         {/* Next Button */}
         <button
-          className={`px-4 py-2 rounded-md ${currentPage === totalPages ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-500 text-white'}`}
+          className={`px-4 py-2 rounded-md ${currentPage === totalPages ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-500 text-white hover:bg-blue-600'}`}
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
         >

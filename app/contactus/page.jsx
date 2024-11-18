@@ -34,13 +34,13 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="container px-4 py-16 mx-auto">
-      <div className="grid gap-12 overflow-hidden bg-white shadow-xl md:grid-cols-2 rounded-3xl">
+    <div className="container px-4 py-12 mx-auto sm:px-6 lg:px-8">
+      <div className="grid gap-12 overflow-hidden bg-white shadow-xl lg:grid-cols-2 rounded-3xl">
         {/* Contact Form */}
-        <div className="p-8 bg-gray-50">
+        <div className="p-6 bg-gray-50 sm:p-8 lg:p-12">
           <div className="mb-8 text-center">
-            <h1 className="mb-4 text-4xl font-bold text-gray-800">Hubungi Kami</h1>
-            <p className="text-gray-600">Kami siap membantu Anda dengan segala kebutuhan desain</p>
+            <h1 className="mb-4 text-3xl font-bold text-gray-800 sm:text-4xl">Hubungi Kami</h1>
+            <p className="text-gray-600 sm:text-lg">Kami siap membantu Anda dengan segala kebutuhan desain</p>
           </div>
 
           <form className="space-y-6" onSubmit={handleSubmit}>
@@ -100,27 +100,24 @@ export default function ContactPage() {
         </div>
 
         {/* Contact Info and Map */}
-        <div>
-          <div className="p-8">
-            <h2 className="mb-6 text-2xl font-bold text-gray-800">Informasi Kontak</h2>
-            <div className="space-y-4">
-              <div className="flex items-center">
-                <MailIcon className="mr-4 text-blue-500" />
-                <span>support@mazeartdesign.com</span>
-              </div>
-              <div className="flex items-center">
-                <PhoneIcon className="mr-4 text-green-500" />
-                <span>+62 8579 9196 683</span>
-              </div>
-              <div className="flex items-center">
-                <MapPinIcon className="mr-4 text-red-500" />
-                <span>Kost Blater 34, Jalan Kendil Wesi, Blater, Kalimanah, Purbalingga</span>
-              </div>
+        <div className="p-6 sm:p-8 lg:p-12">
+          <h2 className="mb-6 text-2xl font-bold text-gray-800 sm:text-3xl">Informasi Kontak</h2>
+          <div className="space-y-4">
+            <div className="flex items-center">
+              <MailIcon className="mr-4 text-blue-500" />
+              <span className="text-sm text-gray-700 sm:text-base">support@mazeartdesign.com</span>
+            </div>
+            <div className="flex items-center">
+              <PhoneIcon className="mr-4 text-green-500" />
+              <span className="text-sm text-gray-700 sm:text-base">+62 8579 9196 683</span>
+            </div>
+            <div className="flex items-center">
+              <MapPinIcon className="mr-4 text-red-500" />
+              <span className="text-sm text-gray-700 sm:text-base">Kost Blater 34, Jalan Kendil Wesi, Blater, Kalimanah, Purbalingga</span>
             </div>
           </div>
 
-          {/* Google Maps Embed */}
-          <div className="w-full p-6 h-96">
+          <div className="mt-8 overflow-hidden rounded-lg shadow-md h-60 sm:h-80 lg:h-96">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15825.33891004328!2d109.339122!3d-7.4281607!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e65595958fba3d7%3A0x6f991176e517cba6!2sKost%20Blater%2034!5e0!3m2!1sid!2sid!4v1731941203818!5m2!1sid!2sid"
               width="100%"

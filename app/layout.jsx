@@ -19,28 +19,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`
-          ${nunito.variable} 
-          font-sans 
-          bg-gradient-to-br 
-          from-gray-50 
-          to-gray-100 
-          min-h-screen 
-          flex 
-          flex-col
-        `}
-      >
-        <div className="fixed inset-x-0 top-0 z-50">
-          <Navbar />
-        </div>
+      <body className={`${nunito.variable} font-sans bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen flex flex-col`}>
+        {/* Navbar */}
+        <Navbar />
 
+        {/* Content */}
         <div className="flex-grow pt-20">
           <div className="container max-w-6xl px-4 mx-auto">
             <main className="p-6 rounded-xl md:p-8 lg:p-10">{children}</main>
           </div>
         </div>
 
+        {/* Footer */}
         <footer className="py-6 mt-8 text-white shadow-inner bg-gradient-to-r from-gray-800 to-gray-900">
           <div className="container max-w-6xl px-4 mx-auto text-center">
             <p className="text-sm opacity-80">© 2024 MazeArtDesign. All rights reserved.</p>

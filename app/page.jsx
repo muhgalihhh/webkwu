@@ -1,40 +1,59 @@
-import { ArrowRightIcon, BrushIcon, LightbulbIcon, PaletteIcon, StarIcon } from 'lucide-react';
+'use client';
+import { ArrowRightIcon, BrushIcon, LightbulbIcon, PaletteIcon, StarIcon, XIcon } from 'lucide-react';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function HomePage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedWork, setSelectedWork] = useState(null);
+
   const featuredWorks = [
     {
       id: 1,
       title: 'Branding Identitas Perusahaan',
-      description: 'Desain logo dan identitas visual modern',
+      description: 'Desain logo dan identitas visual modern untuk berbagai jenis usaha.',
       imageUrl: '/api/placeholder/400/300',
       category: 'Branding',
+      details: 'Kami telah membantu banyak perusahaan membangun identitas merek yang kuat dan menarik. Dari logo hingga panduan merek, kami memastikan hasil yang sesuai visi Anda.',
     },
     {
       id: 2,
       title: 'Desain Produk Digital',
-      description: 'Antarmuka pengguna inovatif untuk aplikasi mobile',
+      description: 'Antarmuka pengguna inovatif untuk aplikasi mobile dan web.',
       imageUrl: '/api/placeholder/400/300',
       category: 'UI/UX',
+      details: 'Tim kami memadukan estetika dan fungsionalitas untuk menciptakan antarmuka yang memukau dan mudah digunakan. Setiap desain dibuat untuk meningkatkan pengalaman pengguna.',
     },
     {
       id: 3,
       title: 'Kampanye Pemasaran',
-      description: 'Konsep kreatif untuk media sosial',
+      description: 'Konsep kreatif untuk media sosial dan kampanye digital.',
       imageUrl: '/api/placeholder/400/300',
       category: 'Marketing',
+      details: 'Kami membuat kampanye pemasaran yang efektif, menarik perhatian audiens, dan meningkatkan kesadaran merek Anda di berbagai platform digital.',
     },
   ];
+  const openModal = (work) => {
+    setSelectedWork(work);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedWork(null);
+  };
 
   return (
-    <>
+    <div className="px-4 py-12 sm:px-6 lg:px-8">
       {/* Jumbotron */}
       <div
         className="
           relative 
           flex 
           items-center 
-          h-[500px] 
+          h-[400px] 
+          sm:h-[500px] 
+          lg:h-[600px] 
           bg-cover 
           bg-center 
           bg-no-repeat 
@@ -50,8 +69,8 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-700/90 to-purple-700/90" />
         <div className="container relative z-10 px-6 mx-auto">
           <div className="max-w-2xl space-y-6">
-            <h1 className="text-5xl font-bold leading-tight text-white drop-shadow-lg">Transformasi Kreatif Dimulai Di Sini</h1>
-            <p className="text-xl leading-relaxed text-white/90">Kami menghadirkan solusi desain inovatif yang mempertemukan seni dan fungsionalitas.</p>
+            <h1 className="text-3xl font-bold leading-tight text-white drop-shadow-lg sm:text-4xl lg:text-5xl">Transformasi Kreatif Dimulai Di Sini</h1>
+            <p className="text-lg leading-relaxed text-white/90 sm:text-xl">Kami menghadirkan solusi desain inovatif yang mempertemukan seni dan fungsionalitas.</p>
             <div className="flex space-x-4">
               <Link href="/portfolio" className="flex items-center px-6 py-3 font-semibold text-blue-600 transition bg-white rounded-full hover:bg-blue-50">
                 Lihat Karya
@@ -66,7 +85,7 @@ export default function HomePage() {
       </div>
 
       {/* Keunggulan */}
-      <div className="grid gap-8 mb-16 md:grid-cols-3">
+      <div className="grid gap-6 mb-16 sm:grid-cols-2 lg:grid-cols-3">
         {[
           {
             icon: <PaletteIcon className="w-12 h-12 text-blue-600" />,
@@ -84,7 +103,7 @@ export default function HomePage() {
             desc: 'Selalu mengikuti tren dan teknologi terkini',
           },
         ].map((benefit, index) => (
-          <div key={index} className="p-6 text-center transition bg-white shadow-md rounded-xl hover:shadow-xl">
+          <div key={index} className="p-6 text-center transition-transform bg-white shadow-md rounded-xl hover:shadow-xl hover:-translate-y-2">
             <div className="flex justify-center mb-4">{benefit.icon}</div>
             <h3 className="mb-3 text-xl font-bold">{benefit.title}</h3>
             <p className="text-gray-600">{benefit.desc}</p>
@@ -93,27 +112,49 @@ export default function HomePage() {
       </div>
 
       {/* Karya Unggulan */}
+      {/* Karya Unggulan */}
       <div className="mb-12 text-center">
         <h2 className="mb-4 text-3xl font-bold text-gray-800">Karya Unggulan Kami</h2>
         <p className="max-w-2xl mx-auto text-gray-600">Setiap proyek adalah perjalanan unik penciptaan dan kreativitas</p>
       </div>
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {featuredWorks.map((work) => (
-          <div key={work.id} className="overflow-hidden transition bg-white shadow-lg rounded-xl hover:scale-105">
+          <div key={work.id} className="overflow-hidden transition-transform bg-white shadow-lg rounded-xl hover:scale-105">
             <img src={work.imageUrl} alt={work.title} className="object-cover w-full h-56" />
             <div className="p-6">
               <h3 className="mb-2 text-xl font-bold">{work.title}</h3>
               <p className="text-gray-600">{work.description}</p>
               <div className="mt-4">
-                <Link href={`/portfolio/${work.id}`} className="inline-flex items-center text-blue-600 hover:text-blue-800">
+                <button onClick={() => openModal(work)} className="inline-flex items-center text-blue-600 hover:text-blue-800">
                   <StarIcon className="w-5 h-5 mr-2" />
                   Lihat Detail
-                </Link>
+                </button>
               </div>
             </div>
           </div>
         ))}
       </div>
-    </>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="relative w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
+            <button onClick={closeModal} className="absolute text-gray-500 top-3 right-3 hover:text-gray-800">
+              <XIcon className="w-6 h-6" />
+            </button>
+            {selectedWork && (
+              <>
+                <img src={selectedWork.imageUrl} alt={selectedWork.title} className="object-cover w-full h-48 rounded-lg" />
+                <div className="mt-4">
+                  <h3 className="mb-2 text-2xl font-bold">{selectedWork.title}</h3>
+                  <p className="text-sm text-gray-500">{selectedWork.category}</p>
+                  <p className="mt-4 text-gray-700">{selectedWork.details}</p>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
