@@ -1,5 +1,5 @@
 'use client';
-import { MailIcon, MapPinIcon, PhoneIcon, SendIcon } from 'lucide-react';
+import { InstagramIcon, MailIcon, MapPinIcon, PhoneIcon, SendIcon } from 'lucide-react';
 import { useState } from 'react';
 
 export default function ContactPage() {
@@ -18,7 +18,9 @@ export default function ContactPage() {
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(formData),
       });
 
@@ -29,6 +31,7 @@ export default function ContactPage() {
         setStatus('error');
       }
     } catch (error) {
+      console.error('Error:', error);
       setStatus('error');
     }
   };
@@ -105,7 +108,7 @@ export default function ContactPage() {
           <div className="space-y-4">
             <div className="flex items-center">
               <MailIcon className="mr-4 text-blue-500" />
-              <span className="text-sm text-gray-700 sm:text-base">support@mazeartdesign.com</span>
+              <span className="text-sm text-gray-700 sm:text-base">mazeartdesignsupport@gmail.com</span>
             </div>
             <div className="flex items-center">
               <PhoneIcon className="mr-4 text-green-500" />
@@ -114,6 +117,12 @@ export default function ContactPage() {
             <div className="flex items-center">
               <MapPinIcon className="mr-4 text-red-500" />
               <span className="text-sm text-gray-700 sm:text-base">Kost Blater 34, Jalan Kendil Wesi, Blater, Kalimanah, Purbalingga</span>
+            </div>
+            <div className="flex items-center">
+              <InstagramIcon className="mr-4 text-purple-500" />
+              <a href="https://www.instagram.com/mzr_dsgn" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-700 sm:text-base">
+                @mzr_dsgn
+              </a>
             </div>
           </div>
 
